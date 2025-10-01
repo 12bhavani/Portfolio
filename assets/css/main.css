@@ -72,23 +72,248 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* Basic */
+/* Basic */	/* Default: Mobile first */
+#carousel-inner > div {
+  flex-direction: column;
+  text-align: center;
+}
 
-	@-ms-viewport {
-		width: device-width;
-	}
+#carousel-inner img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-	body {
-		-ms-overflow-style: scrollbar;
-	}
+/* On laptops/desktops */
+@media (min-width: 768px) {
+  #carousel-inner > div {
+    flex-direction: row;
+    text-align: left;
+  }
 
-	@media screen and (max-width: 480px) {
+  #carousel-inner img {
+    max-width: 460px;
+    height: 460px;
+    margin-bottom: 0;
+  }
+}
+/* Mobile default */
+#cert-pages > div {
+  flex-direction: column;
+  align-items: center;
+}
 
-		html, body {
-			min-width: 320px;
-		}
+.cert-card {
+  width: 90% !important;
+  height: auto !important;
+  max-width: 350px;
+  margin: 10px auto;
+}
 
-	}
+.cert-card img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Laptop/desktop */
+@media (min-width: 768px) {
+  #cert-pages > div {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .cert-card {
+    width: 350px !important;
+    height: 350px !important;
+    margin: 0;
+  }
+}
+
+
+/* Projects Section Responsive Fix */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 200px; /* space between cards */
+  }
+
+  .posts article {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .posts article img {
+    width: 100%;
+    height: auto;      /* maintain ratio */
+    object-fit: cover; /* fills card area nicely */
+    border-radius: 8px;
+  }
+
+  .posts article header {
+    padding: 100px 0;
+  }
+}
+
+  @media (max-width: 768px) {
+    .icons {
+      flex-direction: row !important;
+      gap: 15px !important;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    div[style*="padding: 40px"] {
+      padding: 20px !important;
+    }
+  }
+
+/* Responsive Styles - No existing styles changed */
+@media (max-width: 1200px) {
+  /* Adjust certificate container for tablets */
+  .certificates-container {
+    width: 95% !important;
+    margin: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Education carousel - stack vertically */
+  #carousel-inner > div {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 20px !important;
+  }
+  
+  #carousel-inner > div > div {
+    flex: 1 !important;
+    width: 100% !important;
+  }
+  
+  #carousel-inner img {
+    max-width: 300px !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Certificates - stack vertically */
+  #cert-pages > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+  
+  .cert-card {
+    width: 90% !important;
+    max-width: 350px !important;
+  }
+  
+  /* Skills section adjustments */
+  .items section ul {
+    justify-content: center !important;
+  }
+  
+  .items section ul li {
+    margin: 5px !important;
+  }
+  
+
+  /* Publications tiles */
+  .tiles {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+  
+  .tile {
+    width: 90% !important;
+    max-width: 350px !important;
+  }
+  
+  /* Contact section */
+  .contact-container {
+    flex-direction: column !important;
+  }
+  
+  .contact-container > div {
+    flex: 100% !important;
+    padding: 20px !important;
+  }
+  
+  /* Adjust section padding/margins */
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .section-description {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile adjustments */
+  #carousel-inner img {
+    max-width: 250px !important;
+  }
+  
+  .cert-card {
+    width: 95% !important;
+    max-width: 300px !important;
+  }
+  
+  .gallery.style2 article {
+    width: 98% !important;
+    max-width: 350px !important;
+  }
+  
+  .gallery.style2 article div[style*="background: url"] {
+    height: 350px !important;
+  }
+  
+  .tile {
+    width: 95% !important;
+    max-width: 300px !important;
+  }
+  
+  /* Navigation buttons */
+  #prevBtn, #nextBtn {
+    width: 40px !important;
+    height: 50px !important;
+  }
+  
+  .cert-nav-button {
+    width: 50px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+/* Fix for certificate navigation buttons on mobile */
+@media (max-width: 768px) {
+  .certificates-container {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: auto !important;
+  }
+  
+  .cert-nav-button {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 	html {
 		box-sizing: border-box;
